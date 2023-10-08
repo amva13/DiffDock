@@ -28,10 +28,10 @@ jobs:
         uses: actions/setup-python@v3.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
-          cache: 'conda'
+          cache: 'pip' 
       - name: Create conda environment, install dependencies, and start
         run: |
+          pip install -r requirements.txt
           conda create --name diffdock python=3.9
           conda env update -n diffdock --file environment.yml
           conda install -n diffdock flask werkzeug 

@@ -30,7 +30,7 @@ def prediction(filename):
         "out_dir": os.path.join("results", filename),
         # TODO: other args
     }
-    # run_diffdock_command(**kwargs)
+    run_diffdock_command(**kwargs)
     zipfilepath = os.path.join(os.getcwd(), filename)
     zipformat = "zip"
     directory = os.path.join("results", filename)

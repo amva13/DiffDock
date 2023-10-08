@@ -12,7 +12,7 @@ Or (from outside conda environment)
 ```
 conda install -n diffdock -c conda-forge fair-esm
 ```
-After these, you can start your flask server by running
+After these, you can start your flask server by running the following inside your conda environment
 ```
 flask --app application run
 ```

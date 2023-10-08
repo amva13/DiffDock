@@ -44,8 +44,12 @@ jobs:
           conda install -n diffdock flask werkzeug 
           conda install -n diffdock -c conda-forge fair-esm
       - name: Activate conda diffdock 
-        run: |
-          conda activate diffdock
+        task: Bash@3
+        inputs: 
+          targetType: 'inline'
+          script: |
+            eval "$(conda shell.bash hook)"
+            conda activate diffdock
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

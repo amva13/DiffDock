@@ -1,8 +1,9 @@
 name: Azure Static Web Apps CI/CD
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name  # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: diffdock-flask  # set this to the name of your Azure Web App
   PYTHON_VERSION: '3.9'              # set this to the Python version to use
+  STARTUP_COMMAND: 'flask --app application run'
 
 on:
   push:
@@ -42,12 +43,17 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_SKY_07B528110 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
+          # action: "upload"
+          # ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          # app_location: "/" # App source code path
+          # api_location: "" # Api source code path - optional
+          # output_location: "" # Built app content directory - optional
+          
+          # my changes
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: .
+          startup-command: ${{ env.STARTUP_COMMAND }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:

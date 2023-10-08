@@ -1,5 +1,9 @@
 name: Azure Static Web Apps CI/CD
 
+env:
+  AZURE_WEBAPP_NAME: your-app-name  # set this to the name of your Azure Web App
+  PYTHON_VERSION: '3.9'              # set this to the Python version to use
+
 on:
   push:
     branches:
@@ -19,6 +23,19 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Set up Python version
+        uses: actions/setup-python@v3.0.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      - name: Create conda environment, install dependencies, and start
+        run: |
+          pip install conda
+          conda create --name diffdock python=3.9
+          conda env update -n diffdock --file environment.yml
+          conda install -n diffdock flask werkzeug 
+          conda activate diffdock
+          conda install -c conda-forge fair-esm
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

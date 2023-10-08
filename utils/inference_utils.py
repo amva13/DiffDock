@@ -97,7 +97,7 @@ def compute_ESM_embeddings(model, alphabet, labels, sequences):
     dataset = FastaBatchedDataset(labels, sequences)
     batches = dataset.get_batch_indices(toks_per_batch, extra_toks_per_seq=1)
     data_loader = torch.utils.data.DataLoader(
-        dataset, collate_fn=alphabet.get_batch_converter(truncation_seq_length), batch_sampler=batches
+        dataset, collate_fn=alphabet.get_batch_converter(), batch_sampler=batches
     )
 
     assert all(-(model.num_layers + 1) <= i <= model.num_layers for i in repr_layers)

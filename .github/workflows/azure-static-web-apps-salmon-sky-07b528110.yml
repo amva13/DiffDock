@@ -29,17 +29,23 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip' 
-      - name: Create conda environment, install dependencies, and start
+      - name: Install and initialize conda 
         run: |
-          mkdir -p ~/Anaconda3
-          wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh -O ~/Anaconda3/Anaconda3.sh
-          bash ~/Anaconda3/Anaconda3.sh -b -u -p ~/Anaconda3
-          rm -rf ~/Anaconda3/Anaconda3.sh
+          mkdir -p ~/miniconda3
+          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+          bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+          rm -rf ~/miniconda3/miniconda.sh
+          conda init bash
+          conda init zsh
+      - name: Create diffdock conda environment and install deps 
+        run: |
           conda create --name diffdock python=3.9
           conda env update -n diffdock --file environment.yml
           conda install -n diffdock flask werkzeug 
+          conda install -n diffdock -c conda-forge fair-esm
+      - name: Activate conda diffdock 
+        run: |
           conda activate diffdock
-          conda install -c conda-forge fair-esm
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

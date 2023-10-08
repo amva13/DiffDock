@@ -44,7 +44,7 @@ jobs:
           conda install -n diffdock flask werkzeug 
           conda install -n diffdock -c conda-forge fair-esm
       - name: Activate conda diffdock 
-        uses: Bash@3
+        uses: actions/Bash@3
         with:
           inputs: 
             targetType: 'inline'

@@ -9,4 +9,6 @@ Note: I recommend actually installing the esm package references in the original
     conda install -c conda-forge fair-esm
 
 After these, you can start your flask server by running
-    flask --app application run
+```
+flask --app application run
+```

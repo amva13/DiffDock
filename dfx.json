@@ -1,0 +1,12 @@
+{
+    "canisters": {
+        "kybra_diffdock": {
+            "type": "custom",
+            "build": "python -m kybra kybra_diffdock src/main.py src/main.did",
+            "post_install": ".kybra/kybra_diffdock/post_install.sh",
+            "candid": "src/main.did",
+            "wasm": ".kybra/kybra_diffdock/kybra_diffdock.wasm",
+            "gzip": true
+        }
+    }
+}

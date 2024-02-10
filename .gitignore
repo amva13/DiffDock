@@ -164,3 +164,7 @@ temp6.py
 temp7.py
 esm
 
+# ICP / dfx directories to ignore from dfx deploy
+.dfx/
+.kybra/
+src/main.did

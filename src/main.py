@@ -8,20 +8,21 @@ sim_ran: bool = False
 
 # Query calls complete quickly because they do not go through consensus
 @query
-def get_results() -> dict[str, str]:
-    if sim_ran:
-        return {
-            "protein":protein, 
-            "ligand":ligand, 
-            "result":result,
-            "error": "False",
-            "message":""
-            }
-    else:
-        return {
-            "error": "True",
-            "message": "simulation has not been run"
-        }
+def get_results() -> str:
+    return protein+","+ligand+","+result
+    # if sim_ran:
+    #     return {
+    #         "protein":protein, 
+    #         "ligand":ligand, 
+    #         "result":result,
+    #         "error": "False",
+    #         "message":""
+    #         }
+    # else:
+    #     return {
+    #         "error": "True",
+    #         "message": "simulation has not been run"
+    #     }
 
 # Update calls take a few seconds to complete
 # This is because they persist state changes and go through consensus

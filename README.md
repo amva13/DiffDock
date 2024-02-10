@@ -1,3 +1,6 @@
+## (WIP) Encode ICP Hakcathon submission
+Building a canister for the diffdock model
+## Original instructions
 For instructions to setup conda environment, please see README-original.md or visit the original repo.
 
 After completing your environment setup, run the following for this server to work.

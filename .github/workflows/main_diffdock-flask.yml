@@ -24,23 +24,29 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          conda env create -n diffdock -f environment.yml
+          conda activate diffdock
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install Flask
+        run: conda install flask
+        
+      - name: Install Other Deps
+        run: conda install werkzeug
+
+      - name: Build Flask App
+        run: python application.py build
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+      # - name: Zip artifact for deployment
+      #   run: zip release.zip ./* -r
 
-      - name: Upload artifact for deployment jobs
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-app
-          path: |
-            release.zip
-            !venv/
+      # - name: Upload artifact for deployment jobs
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: python-app
+      #     path: |
+      #       release.zip
+      #       !venv/
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,8 +61,8 @@ jobs:
         with:
           name: python-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
+      # - name: Unzip artifact for deployment
+      #   run: unzip release.zip
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2

@@ -45,6 +45,8 @@ jobs:
           conda install flask
           echo "Installing werkzeug"
           conda install werkzeug
+          echo "Installing esm"
+          conda install -c conda-forge fair-esm
           echo "Building Flask Application..."
           python application.py build
 

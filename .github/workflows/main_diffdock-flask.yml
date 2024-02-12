@@ -48,7 +48,7 @@ jobs:
           echo "Installing esm"
           conda install -c conda-forge fair-esm
           echo "Install pybind11"
-          python -m pip install pybind11
+          pip install "pybind11[global]"
           echo "Installing torch modules"
           pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric==2.0.4 -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
           echo "Building Flask Application..."

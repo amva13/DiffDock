@@ -31,6 +31,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install torch==1.12.1 -f https://download.pytorch.org/whl/cpu/torch-1.12.1%2Bcpu-cp39-cp39-linux_x86_64.whl
+          pip install torchaudio==0.12.1 -f https://download.pytorch.org/whl/cpu/torchaudio-0.12.1%2Bcpu-cp39-cp39-linux_x86_64.whl
+          pip install torchvision==0.13.1 -f https://download.pytorch.org/whl/cpu/torchvision-0.13.1%2Bcpu-cp39-cp39-linux_x86_64.whl
           pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric==2.0.4 -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)

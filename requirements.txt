@@ -38,4 +38,5 @@ https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_sparse-0.6.15%2Bpt112cpu-cp39-
 https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_spline_conv-1.2.1%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
 
 # torch-geometric
-https://data.pyg.org/whl/torch-1.12.0%2Bcpu/pyg_lib-0.4.0%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
+# https://data.pyg.org/whl/torch-1.12.0%2Bcpu/pyg_lib-0.4.0%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
+torch_geometric==2.1.0.post1

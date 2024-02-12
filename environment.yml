@@ -94,7 +94,7 @@ dependencies:
     - spyrmsd==0.5.2
     - sympy==1.11.1
     - threadpoolctl==3.1.0
-    - torch=2.2.0
+    - torch==2.2.0
     - torch-cluster==1.6.0
     - torch-geometric==2.1.0.post1
     - torch-scatter==2.0.9

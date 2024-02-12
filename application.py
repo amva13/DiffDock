@@ -4,6 +4,10 @@ from shutil import make_archive
 from subprocess import run
 from werkzeug.utils import secure_filename
 
+# for build
+from inference import *
+
+# flask app
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST']) 

@@ -47,8 +47,6 @@ jobs:
           conda install werkzeug
           echo "Installing esm"
           conda install -c conda-forge fair-esm
-          echo "Installing torch"
-          conda install pytorch==1.11.0 pytorch-cuda=11.7 -c pytorch -c nvidia
           echo "Building Flask Application..."
           python application.py build
 

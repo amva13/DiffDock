@@ -25,3 +25,17 @@ threadpoolctl==3.1.0
 tqdm==4.64.1
 Flask==2.2.3
 Werkzeug==2.2.3
+
+# torch whl
+https://download.pytorch.org/whl/cpu/torch-1.12.1%2Bcpu-cp39-cp39-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchaudio-0.12.1%2Bcpu-cp39-cp39-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.13.1%2Bcpu-cp39-cp39-linux_x86_64.whl
+
+# torch-scatter torch-sparse torch-cluster torch-spline-conv
+https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_cluster-1.6.0%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
+https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_scatter-2.0.9-cp39-cp39-linux_x86_64.whl
+https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_sparse-0.6.15%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
+https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_spline_conv-1.2.1%2Bpt112cpu-cp39-cp39-linux_x86_64.whl
+
+# torch-geometric
+https://data.pyg.org/whl/torch-1.12.0%2Bcpu/pyg_lib-0.4.0%2Bpt112cpu-cp39-cp39-linux_x86_64.whl

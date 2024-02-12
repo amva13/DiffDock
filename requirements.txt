@@ -42,5 +42,5 @@ https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_spline_conv-1.2.1%2Bpt112cpu-c
 torch_geometric==2.1.0.post1
 # fair-esm[esmfold]
 fair-esm[esmfold] @ git+https://github.com/facebookresearch/esm.git@main
-dllogger @ git+https://github.com/NVIDIA/dllogger.git@main
+dllogger @ git+https://github.com/NVIDIA/dllogger.git
 openfold @ git+https://github.com/aqlaboratory/openfold.git@4b41059694619831a7db195b7e0988fc4ff3a307

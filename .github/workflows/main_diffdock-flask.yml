@@ -47,17 +47,6 @@ jobs:
           conda install werkzeug
           echo "Installing esm"
           conda install -c conda-forge fair-esm
-          echo "Installing torch"
-          pip install torch -f https://data.pyg.org/whl/torch-1.12.1+cpu.html 
-          echo "Installing torch-cluster"
-          pip install torch-cluster -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-          echo "Installing torch-scatter"
-          pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-          echo "Installing torch-sparse"
-          pip install torch-sparse -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-          echo "Installing torch-spline-conv"
-          pip install torch-spline-conv -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-
           echo "Building Flask Application..."
           python application.py build
 

@@ -43,4 +43,4 @@ torch_geometric==2.1.0.post1
 # fair-esm[esmfold]
 fair-esm[esmfold] @ git+https://github.com/facebookresearch/esm.git@main
 dllogger @ git+https://github.com/NVIDIA/dllogger.git
-openfold @ git+https://github.com/aqlaboratory/openfold.git@4b41059694619831a7db195b7e0988fc4ff3a307
+# openfold @ git+https://github.com/aqlaboratory/openfold.git@4b41059694619831a7db195b7e0988fc4ff3a307
